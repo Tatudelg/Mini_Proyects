@@ -1,0 +1,51 @@
+Limpieza de datos del censo de EE. UU.
+Acaba de ser contratado como analista de datos en la Oficina del Censo, que recopila datos del censo y crea visualizaciones e información interesantes a partir de ellos.
+
+La persona que tenía tu trabajo antes que tú te dejó todos los datos que tenía para el censo más reciente. Está en varios csvarchivos. No usaban pandas, solo miraban estos csvarchivos manualmente cada vez que querían encontrar algo. A veces copiaban y pegaban ciertos números en Excel para hacer gráficos.
+
+La idea te hace temblar. Esto no es escalable ni repetible.
+
+Tu jefe quiere que hagas algunos diagramas de dispersión e histogramas al final del día. ¿Puede obtener estos datos en pandasuna forma razonable para poder hacer estos histogramas?
+
+1.
+La primera visualización que su jefe quiere que haga es un diagrama de dispersión que muestra el ingreso promedio en un estado frente a la proporción de mujeres en ese estado.
+
+Abra algunos de los csvarchivos del censo en el navegador (haga clic en el icono del archivo en la esquina superior izquierda del editor de código y luego haga clic en cualquiera de los csvarchivos para abrirlos). ¿Cómo se llaman? ¿Qué tipo de información tienen? ¿Nos ayudarán a hacer este gráfico?
+
+
+2. 
+Será más fácil inspeccionar estos datos una vez que los tengamos en un DataFrame. ¡Ni siquiera puedes llamar .head()a estos csvs! ¿Cómo se supone que los leerás?
+
+Utilizando glob, recorra los archivos del censo disponibles y cárguelos en DataFrames. Luego, concatene todos esos DataFrames juntos en un DataFrame, llamado algo así como us_census.
+
+3.
+Mire el .columnsy el .dtypesdel us_censusDataFrame. ¿Esos tipos de datos le van a obstaculizar mientras intenta hacer histogramas?
+
+4.
+Mire .head()el DataFrame para que pueda comprender por qué algunos de estos dtypesson objetos en lugar de números enteros o flotantes.
+
+Comience a hacer un plan sobre cómo convertir estas columnas en los tipos correctos para su manipulación.
+
+5.
+Utilice expresiones regulares para convertir la Incomecolumna en un formato que esté listo para convertirse en un tipo numérico.
+Each entry in the Income column has a $ as the first character. In order to convert the columns to numbers, we should remove those dollar signs.
+
+6.
+Mira la GenderPopcolumna. Vamos a querer separar esto en dos columnas, la Mencolumna y la Womencolumna.
+
+Divida la columna en esas dos nuevas columnas usando str.splity separando esos resultados.
+
+7.
+Convierta ambas columnas en tipos de datos numéricos.
+
+¡Todavía hay uno Mo un Fpersonaje en cada entrada! Deberíamos eliminarlos antes de convertirnos. Remember the function pd.to_numeric()
+
+8.
+¡Ahora debería tener las columnas que necesita para hacer el gráfico y asegurarse de que su jefe no golpee con enojo una regla en su escritorio porque ha desperdiciado todo el día limpiando sus datos sin resultados para mostrar!
+
+¡Usa matplotlib para hacer un diagrama de dispersión!
+
+plt.scatter(the_women_column, the_income_column) 
+¡Recuerda llamar plt.show()para ver el gráfico!
+
+
