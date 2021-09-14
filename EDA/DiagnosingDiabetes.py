@@ -1,4 +1,3 @@
-import codecademylib3
 import pandas as pd
 import numpy as np
 
@@ -45,10 +44,10 @@ print(diabetes_data.Outcome.unique())
 
 #replacing the values with the mean of each column.
 #Does not work :c
-"""
-columns_with_null_values = [diabetes_data['Glucose'], diabetes_data['BloodPressure'], diabetes_data['SkinThickness'], diabetes_data['Insulin'], diabetes_data['BMI']]
+"""columns_with_null_values = [[diabetes_data.Glucose, diabetes_data.BloodPressure, diabetes_data.SkinThickness, diabetes_data.Insulin, diabetes_data.BMI]]
 for column in columns_with_null_values:
-  column = column.fillna(np.mean(column))
 
-print(diabetes_data[diabetes_data.isnull().any(axis=1)])
-"""
+    column = column.fillna(np.mean(column))
+
+print(diabetes_data[diabetes_data.isnull().any(axis=1)])"""
+
