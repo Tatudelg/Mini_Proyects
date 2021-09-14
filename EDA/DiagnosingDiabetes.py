@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-# code goes here
 diabetes_data = pd.read_csv('diabetes.csv')
 #print(diabetes_data.head())
 
@@ -28,7 +27,7 @@ print(diabetes_data.isnull().sum())
 print(diabetes_data.info())
 
 #Print null values
-print(diabetes_data[diabetes_data.isnull().any(axis=1)])
+print('nullvalues', diabetes_data[diabetes_data.isnull().any(axis=1)])
 """Most rows with missing data have missing values in more than one column. In fact, every single row with at least one missing value 
 also has a missing value in the insulin column."""
 
@@ -44,10 +43,10 @@ print(diabetes_data.Outcome.unique())
 
 #replacing the values with the mean of each column.
 #Does not work :c
-"""columns_with_null_values = [[diabetes_data.Glucose, diabetes_data.BloodPressure, diabetes_data.SkinThickness, diabetes_data.Insulin, diabetes_data.BMI]]
+"""columns_with_null_values = (diabetes_data.Glucose, diabetes_data.BloodPressure, diabetes_data.SkinThickness, diabetes_data.Insulin, diabetes_data.BMI)
 for column in columns_with_null_values:
 
     column = column.fillna(np.mean(column))
 
-print(diabetes_data[diabetes_data.isnull().any(axis=1)])"""
-
+print(diabetes_data[diabetes_data.isnull().any(axis=1)])
+print(diabetes_data.isnull().sum())"""
