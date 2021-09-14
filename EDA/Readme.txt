@@ -14,4 +14,4 @@ BMI: Body mass index
 DiabetesPedigreeFunction: Diabetes pedigree function
 Age: Age (years)
 Outcome: Class variable (0 or 1)
-Let’s get started!
+
